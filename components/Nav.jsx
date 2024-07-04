@@ -48,7 +48,7 @@ const Nav = () => {
               Sign Out
             </button>
 
-            <Link href="/profile">
+            <Link href={`/profile/${session?.user?.id}?name=${session?.user?.username}`}>
               <Image
                 src={session?.user?.image}
                 width={37}
@@ -93,7 +93,7 @@ const Nav = () => {
             {isMenuOpen && (
               <div className="dropdown">
                 <Link
-                  href="/profile"
+                  href={`/profile/${session?.user?.id}?name=${session?.user?.username}`}
                   className="dropdown_link"
                   onClick={() => setIsMenuOpen(false)}
                 >
